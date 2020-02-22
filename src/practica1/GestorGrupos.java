@@ -2,6 +2,9 @@ package practica1;
 
 import excepciones.MiExcepcion;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class GestorGrupos {
 	
 	public int[][] dividir_lista(int[] elementos, float fraccion) {
@@ -19,15 +22,35 @@ public class GestorGrupos {
 			System.out.println(ex.getMessage());
 		}
 
-		int cant = (int) (elementos.length * fraccion);
-	
+		List<Integer> aux = new ArrayList<>();
 
+		for (int i = 0; i < elementos.length; i++){
+			if (!aux.contains(elementos[i])){
+				aux.add(elementos[i]);
+			}
+		}
+
+		int cant1 = 0;
+		int cant2;
+		int cantTotal = 0;
+
+		for (int i = 0; i < aux.size(); i++){
+			for (int j = 0; j < elementos.length; j++){
+				if (aux.get(i).equals(elementos[j])){
+					cant1++;
+				}
+			}
+			cant2 = Math.round(cant1 * fraccion);
+			cantTotal += cant2;
+			cant1 = 0;
+		}
+	
+		//int cant = (int) (elementos.length * fraccion);
 		int[][] lista_dividida = new int[2][];
-		
-		int[] lista0= new int[cant];
-		int[] lista0_elem = new int[cant];
-		int[] lista1= new int[elementos.length - cant];
-		int[] lista1_elem= new int[elementos.length - cant];
+		int[] lista0= new int[cantTotal];
+		int[] lista0_elem = new int[cantTotal];
+		int[] lista1= new int[elementos.length - cantTotal];
+		int[] lista1_elem= new int[elementos.length - cantTotal];
 		for(int i = 0; i<lista0.length;i++) {
 			lista0[i]=-1;
 			lista0_elem[i]=-1;
