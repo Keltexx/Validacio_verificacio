@@ -2,6 +2,7 @@ package test;
 
 import excepciones.MiExcepcion;
 import org.junit.AfterClass;
+import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -57,8 +58,9 @@ public class GestorGruposTest {
 
     @Test
     public void dividir_lista() throws MiExcepcion {
-        assertArrayEquals(this.solucion, gestor.dividir_lista(this.elementos, this.fraccion));
+    	assertArrayEquals(this.solucion, gestor.dividir_lista(this.elementos, this.fraccion));
     }
+    
 
     /*
     @Test
