@@ -1,32 +1,18 @@
 package test;
 
-<<<<<<< HEAD
-
-import static org.junit.Assert.*;
-
-import java.util.Arrays;
-import java.util.Collection;
-
-=======
 import excepciones.MiExcepcion;
->>>>>>> 4210d2fb9454930d523c7689b858e44b2b57c976
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameters;
-<<<<<<< HEAD
-
-import practica1.GestorGrupos;
-=======
 import practica1.GestorGrupos;
 
 import java.util.Arrays;
 import java.util.Collection;
 
 import static org.junit.Assert.assertArrayEquals;
->>>>>>> 4210d2fb9454930d523c7689b858e44b2b57c976
 
 @RunWith(Parameterized.class)
 public class GestorGruposTest {
