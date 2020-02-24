@@ -1,9 +1,15 @@
 package practica1;
-import practica1.GestorGrupos;
+import excepciones.EmptyListException;
+import excepciones.MiExcepcion;
 
 public class Pruebas {
 
+<<<<<<< HEAD
 	public static void main(String[] args) {
+=======
+	public static void main(String[] args) throws MiExcepcion, EmptyListException {
+		// TODO Auto-generated method stub
+>>>>>>> 4210d2fb9454930d523c7689b858e44b2b57c976
 		GestorGrupos g = new GestorGrupos();
 		int[] elementos = new int[]{3,5,5,1,1,7,1,7,5,3,3,3,3};
 		
