@@ -1,23 +1,23 @@
 package practica1;
 
-import excepciones.MiExcepcion;
+import excepciones.*;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class GestorGrupos {
 	
-	public int[][] dividir_lista(int[] elementos, float fraccion) {
+	public int[][] dividir_lista(int[] elementos, float fraccion) throws MiExcepcion {
 		int[][] lista_dividida = new int[2][];
-		try {
+
 			if (elementos == null)
-				throw new MiExcepcion(2);
+				throw new NullListException();
 			else if (elementos.length <= 0)
-				throw new MiExcepcion(1);
+				throw new EmptyListException();
 			else if (fraccion < 0)
-				throw new MiExcepcion(3);
+				throw new LowerFractionException();
 			else if (fraccion > 1)
-				throw new MiExcepcion(4);
+				throw new UpperFractionException();
 			else {
 				List<Integer> aux = new ArrayList<>();
 
@@ -87,12 +87,9 @@ public class GestorGrupos {
 				lista_dividida[1] = lista1;
 				return lista_dividida;
 			}
-		} catch (MiExcepcion ex) {
-			System.out.println(ex.getMessage());
-			
-		}
 
-		return lista_dividida;
+
+		//return lista_dividida;
 
 	}
 	

@@ -2,7 +2,6 @@ package test;
 
 import excepciones.MiExcepcion;
 import org.junit.AfterClass;
-import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -12,9 +11,8 @@ import practica1.GestorGrupos;
 
 import java.util.Arrays;
 import java.util.Collection;
-import java.util.List;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertArrayEquals;
 
 @RunWith(Parameterized.class)
 public class GestorGruposTest {
@@ -43,10 +41,6 @@ public class GestorGruposTest {
     public static Collection <Object[]> datos() {
         return Arrays.asList(new Object[][]{
                 {new int[]{1}, 0.6f, new int[][]{{0},{}}},
-                {null, 0.3f, new int[][]{{},{}}},
-                {new int[]{}, 1f, new int[][]{{},{}}},
-                {new int[]{1,2,3,3,2,1}, 50f, new int[][]{{},{}}},
-                {new int[]{1,2,3,3,2,1}, -3f, new int[][]{{},{}}},
                 {new int[]{1,2,3,3,2,1}, 0f, new int[][]{{},{0,1,2,3,4,5}}},
                 {new int[]{1,2,3,3,2,1}, 0.6f, new int[][]{{0,1,2},{3,4,5}}},
                 {new int[]{1,1,1,1,1,1}, 0.3f, new int[][]{{0,1},{2,3,4,5}}},
@@ -57,10 +51,9 @@ public class GestorGruposTest {
     }
 
     @Test
-    public void dividir_lista() throws MiExcepcion {
+    public void dividir_lista() throws MiExcepcion{
     	assertArrayEquals(this.solucion, gestor.dividir_lista(this.elementos, this.fraccion));
     }
-    
 
     /*
     @Test
